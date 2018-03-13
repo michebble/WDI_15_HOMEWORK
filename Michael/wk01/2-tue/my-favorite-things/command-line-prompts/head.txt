@@ -1,0 +1,2 @@
+head will show the first 10 lines in a file.
+$ head "file"

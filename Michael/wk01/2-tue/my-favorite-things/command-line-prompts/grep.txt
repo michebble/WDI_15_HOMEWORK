@@ -1,0 +1,2 @@
+grep is a command to let you find a string.
+$ grep "string" "file/process"
