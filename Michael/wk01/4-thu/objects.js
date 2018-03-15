@@ -35,8 +35,12 @@ var recipe = {
 }
 
 console.log(recipe.title);
-console.log(recipe.servings);
-console.log(recipe.ingredients);
+console.log('Serves: ' + recipe.servings);
+console.log('Ingredients:')
+for (var i = 0; i < recipe.ingredients.length; i++) {
+  console.log(recipe.ingredients[i]);
+}
+
 
 /*
 
@@ -121,7 +125,7 @@ var movie = {
 }
 
 function details(film) {
-  console.log(`${film.title}, released in ${film.released} and runs for ${film.duration} minutes.\nStars: ${film.stars.join(', ')}.`);
+  console.log(`"${film.title}" was released in ${film.released} and runs for ${film.duration} minutes.\nStars: ${film.stars.join(', ')}.`);
 }
 
 details(movie);
