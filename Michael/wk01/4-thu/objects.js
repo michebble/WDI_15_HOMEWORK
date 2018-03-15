@@ -90,7 +90,7 @@ var books =[
   },
   { title: "Learn to Program",
     author: "Chris Pine",
-    alreadyRead: false
+    alreadyRead: true
   },
 ]
 
