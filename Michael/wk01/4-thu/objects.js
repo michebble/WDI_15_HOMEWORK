@@ -61,7 +61,7 @@ var books =[
     alreadyRead: true
   },
   { title: "Rum Diary",
-    author: "",
+    author: "Hunter S. Thompson",
     alreadyRead: true
   },
   { title: "Tripwire",
