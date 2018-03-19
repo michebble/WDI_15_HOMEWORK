@@ -1,10 +1,4 @@
 console.log ("PTV simulator");
-
-
-// var variable = function (){
-  
-// }
-
 //maybe as object containing route name string and stips array
 var lines = [
   { title:'Alamein',
@@ -31,8 +25,6 @@ var lines = [
      'Windsor']
   }
 ]
-
-
 //pretty sure this is not the best way to store the results
 var finalOutput = {
   origin: '',
