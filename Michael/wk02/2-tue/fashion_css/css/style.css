@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  /*border: 1px solid rebeccapurple;*/
+}
+
+header h1, header h2 {
+  display: inline;
+  border: 1px solid green;
+}
+
+.top-nav a {
+  background-color: black;
+  display: inline-block;
+  width: 16%;
+}
+
+
+main {
+  display: inline-block;
+  background-color: mistyrose;
+  width: 62%;
+  margin-right: 2%;
+}
+
+main img {
+  width: 100%;
+}
+
+main footer, aside div footer {
+  color: red;
+  text-align: right;
+  border-bottom: 1px solid black;
+}
+
+article {
+  padding: 10px;
+}
+
+
+
+
+aside {
+  display: inline-block;
+  background-color: linen;
+  vertical-align: top;
+  width: 30%;
+  margin-left: 3%
+}
+
+.bottom-nav a {
+  color: red;
+  border-left: 1px solid black;
+}
+.bottom-nav a:first-child {
+  border-left: none;
+}
