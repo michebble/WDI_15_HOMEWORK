@@ -5,24 +5,52 @@
 .container {
   width: 80%;
   margin: 0 auto;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
   /*border: 1px solid rebeccapurple;*/
 }
 
-header h1, header h2 {
+header {
+  margin-top: 30px;
+  margin-bottom: 15px;
+
+}
+
+h1, header h2 {
+  font-weight: 200;
   display: inline;
-  border: 1px solid green;
+  /*border: 1px solid green;*/
+}
+
+h1 {
+  margin-left: 7px;
+  color: red;
+  font-size: 3em;
+  margin-right: 10px;
+}
+
+.top-nav {
+  text-align: center;
 }
 
 .top-nav a {
+  padding: 10px;
   background-color: black;
   display: inline-block;
   width: 16%;
 }
 
+a {
+  text-decoration-line: none;
+}
+
+.top-nav a {
+  color: white;
+}
 
 main {
   display: inline-block;
-  background-color: mistyrose;
+  /*background-color: mistyrose;*/
   width: 62%;
   margin-right: 2%;
 }
@@ -31,28 +59,79 @@ main img {
   width: 100%;
 }
 
-main footer, aside div footer {
+section a, aside div a {
+  width: 100%;
   color: red;
   text-align: right;
+  font-family: 'Roboto', sans-serif;
+}
+
+section {
+  padding: 10px;
   border-bottom: 1px solid black;
 }
 
-article {
-  padding: 10px;
+section p {
+  font-size: 1.75em;
+  color: grey;
+  margin-bottom: 0;
 }
 
+section h2 {
+  font-size: 1.75em;
+  margin-top: 0;
+}
 
+article:first-letter{
+  font-size: 3.5em;
+  float: left;
+  padding-right: 10px;
+  color: grey;
+}
 
+header h2 {
+  color: grey;
+}
 
 aside {
   display: inline-block;
-  background-color: linen;
+ /* background-color: linen;*/
   vertical-align: top;
   width: 30%;
   margin-left: 3%
 }
 
+aside div:first-child {
+  border-top: none;
+  border-bottom: 1px solid grey;
+}
+
+aside div {
+  border-top: 1px solid grey;
+  border-bottom: none;
+}
+
+aside h3 {
+  font-family: 'Roboto', sans-serif;
+}
+
+aside img {
+  width: 100%;
+  padding: 20px 0;
+
+}
+
+li {
+  color: red;
+}
+
+.bottom-nav {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .bottom-nav a {
+  padding-left: 3px;
   color: red;
   border-left: 1px solid black;
 }
