@@ -26,47 +26,51 @@ var warning = 'not enough money'
 var depositSavings = function() {
   savingsBalance.textContent = Number(savingsBalance.textContent) + Number(savingsInput.value);
   savingsInput.value = null;
+  moreThanZeroBalance(checkingBalance, checkingBox, checkingInput);
 }
 
 var depositChecking = function() {
   checkingBalance.textContent = Number(checkingBalance.textContent) + Number(checkingInput.value);
   checkingInput.value = null;
+  moreThanZeroBalance(checkingBalance, checkingBox, checkingInput);
 }
 
+
 var withdrawSavings = function() {
-  if ((Number(savingsBalance.textContent) - Number(savingsInput.value)) >= 0) {
-    savingsBalance.textContent = Number(savingsBalance.textContent) - Number(savingsInput.value);
-    savingsInput.value = null;
-  }
-  if (Number(savingsBalance.textContent) === 0){
-    console.log('oops');
-    savingsBox.style.backgroundColor = 'red';
-    savingsInput.value = null;
-  }
+
+  withdraw(savingsBalance, savingsInput);
+  zeroBalanceWarning(savingsBalance, savingsBox, savingsInput);
 }
 
 var withdrawChecking = function() {
-  if ((Number(checkingBalance.textContent) - Number(checkingInput.value)) >= 0) {
-    checkingBalance.textContent = Number(checkingBalance.textContent) - Number(checkingInput.value);
-    checkingInput.value = null;
-  }
-  if (Number(checkingBalance.textContent) === 0){
-    console.log('oops');
-    checkingBox.style.backgroundColor = 'red';
-    checkingInput.value =  null;
-  } else if (Number(checkingBalance.textContent) !== 0) {
-    checkingBox.style.backgroundColor = '#ccc';
-    checkingInput.value =  null;
-  }
+
+  withdraw(checkingBalance, checkingInput);
+  zeroBalanceWarning(checkingBalance, checkingBox, checkingInput);
 }
 
 
 savingsDepositBtn.addEventListener('click', depositSavings);
-checkingDepositBtn.addEventListener('click', depositChecking );
-
+checkingDepositBtn.addEventListener('click', depositChecking);
 savingsWithdrawBtn.addEventListener('click', withdrawSavings);
+checkingWithdrawBtn.addEventListener('click', withdrawChecking);
 
-checkingWithdrawBtn.addEventListener('click', withdrawChecking)
+var moreThanZeroBalance = function(accountBalance, accountBox, accountInput) {
+  if (Number(accountBalance.textContent) !== 0) {
+    accountBox.style.backgroundColor = '#CCC';
+    accountInput.value =  null;
+  }
+}
 
+var zeroBalanceWarning = function(accountBalance, accountBox, accountInput) {
+  if (Number(accountBalance.textContent) === 0){
+    accountBox.style.backgroundColor = 'red';
+    accountInput.value =  null;
+  }
+}
 
-
+var withdraw = function(accountBalance, accountInput) {
+  if ((Number(accountBalance.textContent) - Number(accountInput.value)) >= 0) {
+    accountBalance.textContent = Number(accountBalance.textContent) - Number(accountInput.value);
+    accountInput.value = null;
+  }
+}
