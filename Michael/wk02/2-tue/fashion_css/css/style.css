@@ -38,14 +38,16 @@ h1 {
   background-color: black;
   display: inline-block;
   width: 16%;
+  color: white;
 }
 
 a {
   text-decoration-line: none;
 }
 
-.top-nav a {
-  color: white;
+
+main, aside {
+  border: 2px solid rebeccapurple;
 }
 
 main {

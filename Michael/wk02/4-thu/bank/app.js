@@ -26,7 +26,7 @@ var warning = 'not enough money'
 var depositSavings = function() {
   savingsBalance.textContent = Number(savingsBalance.textContent) + Number(savingsInput.value);
   savingsInput.value = null;
-  moreThanZeroBalance(checkingBalance, checkingBox, checkingInput);
+  moreThanZeroBalance(savingsBalance, savingsBox, savingsInput);
 }
 
 var depositChecking = function() {
