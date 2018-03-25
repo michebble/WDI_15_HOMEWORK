@@ -1,5 +1,23 @@
-img:hover {
-    -webkit-transform: scaleY(-1);
-    transform: scaleY(-1);
-    transform: rotate(20deg);
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+}
+
+.sky {
+  background-color: skyblue;
+  height: 260px;
+}
+
+.grass {
+  height: 10px;
+
+  background-color: green;
+}
+
+.ground {
+  height: 260px;
+  background-color: limegreen;
 }
