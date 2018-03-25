@@ -22,38 +22,6 @@ checkingBalance.textContent = 100
 
 var warning = 'not enough money'
 
-// initialise functions
-var depositSavings = function() {
-  savingsBalance.textContent = Number(savingsBalance.textContent) + Number(savingsInput.value);
-  savingsInput.value = null;
-  moreThanZeroBalance(savingsBalance, savingsBox, savingsInput);
-}
-
-var depositChecking = function() {
-  checkingBalance.textContent = Number(checkingBalance.textContent) + Number(checkingInput.value);
-  checkingInput.value = null;
-  moreThanZeroBalance(checkingBalance, checkingBox, checkingInput);
-}
-
-
-var withdrawSavings = function() {
-
-  withdraw(savingsBalance, savingsInput);
-  zeroBalanceWarning(savingsBalance, savingsBox, savingsInput);
-}
-
-var withdrawChecking = function() {
-
-  withdraw(checkingBalance, checkingInput);
-  zeroBalanceWarning(checkingBalance, checkingBox, checkingInput);
-}
-
-
-savingsDepositBtn.addEventListener('click', depositSavings);
-checkingDepositBtn.addEventListener('click', depositChecking);
-savingsWithdrawBtn.addEventListener('click', withdrawSavings);
-checkingWithdrawBtn.addEventListener('click', withdrawChecking);
-
 var moreThanZeroBalance = function(accountBalance, accountBox, accountInput) {
   if (Number(accountBalance.textContent) !== 0) {
     accountBox.style.backgroundColor = '#CCC';
@@ -74,3 +42,35 @@ var withdraw = function(accountBalance, accountInput) {
     accountInput.value = null;
   }
 }
+
+// initialise functions
+var depositSavings = function() {
+  savingsBalance.textContent = Number(savingsBalance.textContent) + Number(savingsInput.value);
+  savingsInput.value = null;
+  moreThanZeroBalance(savingsBalance, savingsBox, savingsInput);
+}
+
+var depositChecking = function() {
+  checkingBalance.textContent = Number(checkingBalance.textContent) + Number(checkingInput.value);
+  checkingInput.value = null;
+  moreThanZeroBalance(checkingBalance, checkingBox, checkingInput);
+}
+
+
+var withdrawSavings = function() {
+  withdraw(savingsBalance, savingsInput);
+  zeroBalanceWarning(savingsBalance, savingsBox, savingsInput);
+}
+
+var withdrawChecking = function() {
+  withdraw(checkingBalance, checkingInput);
+  zeroBalanceWarning(checkingBalance, checkingBox, checkingInput);
+}
+
+
+savingsDepositBtn.addEventListener('click', depositSavings);
+checkingDepositBtn.addEventListener('click', depositChecking);
+savingsWithdrawBtn.addEventListener('click', withdrawSavings);
+checkingWithdrawBtn.addEventListener('click', withdrawChecking);
+
+
