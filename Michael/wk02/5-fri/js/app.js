@@ -3,6 +3,7 @@ console.log('Meow-tastic')
 var movePixels = 10;
 var delayMs = 50;
 var catTimer = null;
+var danceTimer = null;
 var walkLeft = true;
 var danced = false;
 
@@ -24,16 +25,16 @@ var catDance = function() {
   danced = true;
   bgMusic(music);
   setTimeout(startCatWalk, 8500);
-  // setInterval(flashScreen, 1000);
+  danceTimer = window.setInterval(flashScreen, 1000);
 }
 
-// var flashScreen = function() {
-//   if (body.style.filter === 'invert(100%)') {
-//     body.style.filter = 'invert(0%)';
-//   } else {
-//     body.style.filter = 'invert(100%)';
-//   }
-// }
+var flashScreen = function() {
+  if (body.style.filter === 'invert(100%)') {
+    body.style.filter = 'invert(0%)';
+  } else {
+    body.style.filter = 'invert(100%)';
+  }
+}
 
 var catWalk = function() {
   var currentLeft = parseInt(img.style.left);
@@ -65,8 +66,8 @@ var catWalkBack = function() {
 }
     
 var startCatWalk = function() {
-  // clearInterval(flashScreen);
-  // body.style.filter = 'invert(0%)';
+  clearInterval(danceTimer);
+  body.style.filter = 'invert(0%)';
   startButton.disabled = true;
   img.src = 'images/cat-walk.gif';
   if (walkLeft === true) {
@@ -81,6 +82,8 @@ var stopCatWalk = function() {
   movePixels = 10;
   clearInterval(catTimer);
 }
+
+
 
 var speedUp = function() {
   movePixels = movePixels + 5;
