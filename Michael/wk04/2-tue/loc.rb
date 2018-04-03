@@ -1,15 +1,20 @@
-puts 'Welcome to a basic CLI claculator!'
+line_width = 50
+border = '*'
+puts border * line_width
+puts (                        'Welcome to a basic CLI claculator!'.center(line_width))
 loop do
-  puts 'Select which type of arithmetic operation to use.'
-  puts 'Press 1 for addition'
-  puts 'Press 2 for subtraction'
-  puts 'Press 3 for multiplication'
-  puts 'Press 4 for division'
-  puts 'Press 5 for exponents'
-  puts 'Press 6 for square root'
+  puts
+  puts ('Select which type of arithmetic operation to use'.center(line_width))
+  puts 'Type "1" for addition'
+  puts 'Type "2" for subtraction'
+  puts 'Type "3" for multiplication'
+  puts 'Type "4" for division'
+  puts 'Type "5" for exponent'
+  puts 'Type "6" for square root'
   puts 'Or type "exit" to quit'
+  print 'Enter selection: '
   arithmetic_operation_selection = gets.chomp
-
+  
   if arithmetic_operation_selection.downcase == 'exit' 
     break
   end
@@ -23,16 +28,16 @@ loop do
 
   if arithmetic_operation_selection == '1'
     answer = first_number + second_number
-    puts "#{first_number} + #{second_number} = #{answer}"
+    puts "#{first_number} plus #{second_number} equals #{answer}"
   elsif arithmetic_operation_selection == '2'
     answer = first_number - second_number
-    puts "#{first_number} - #{second_number} = #{answer}"
+    puts "#{first_number} minus #{second_number} equals #{answer}"
   elsif arithmetic_operation_selection == '3'
     answer = first_number * second_number
-    puts "#{first_number} * #{second_number} = #{answer}"
+    puts "#{first_number} multiplied by #{second_number} equals #{answer}"
   elsif arithmetic_operation_selection == '4'
     answer = first_number / second_number
-    puts "#{first_number} / #{second_number} = #{answer}"
+    puts "#{first_number} divided by #{second_number} equals #{answer}"
   elsif arithmetic_operation_selection == '5'
     answer = first_number ** second_number
     puts "#{first_number} to the power #{second_number} is #{answer}"
@@ -40,6 +45,8 @@ loop do
     answer = Math.sqrt(first_number)
     puts "The square root of #{first_number}  is #{answer}."
   end
-
-  puts
 end
+
+puts
+puts ('Thank you. Please come again.'.center(line_width))
+puts border * line_width
