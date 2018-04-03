@@ -26,22 +26,23 @@ loop do
     second_number = gets.to_i
   end
 
-  if arithmetic_operation_selection == '1'
+ case arithmetic_operation_selection 
+ when  '1'
     answer = first_number + second_number
     puts "#{first_number} plus #{second_number} equals #{answer}"
-  elsif arithmetic_operation_selection == '2'
+ when '2'
     answer = first_number - second_number
     puts "#{first_number} minus #{second_number} equals #{answer}"
-  elsif arithmetic_operation_selection == '3'
+ when '3'
     answer = first_number * second_number
     puts "#{first_number} multiplied by #{second_number} equals #{answer}"
-  elsif arithmetic_operation_selection == '4'
+ when '4'
     answer = first_number / second_number
     puts "#{first_number} divided by #{second_number} equals #{answer}"
-  elsif arithmetic_operation_selection == '5'
+ when '5'
     answer = first_number ** second_number
     puts "#{first_number} to the power #{second_number} is #{answer}"
-  elsif arithmetic_operation_selection == '6'
+ when '6'
     answer = Math.sqrt(first_number)
     puts "The square root of #{first_number}  is #{answer}."
   end
