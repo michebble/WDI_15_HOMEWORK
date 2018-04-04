@@ -1,5 +1,5 @@
 console.log ("PTV simulator");
-//maybe as object containing route name string and stips array
+
 var lines = [
   { title:'Alamein',
     stops: ['Flinders Street',
@@ -25,7 +25,7 @@ var lines = [
      'Windsor']
   }
 ]
-//pretty sure this is not the best way to store the results
+
 var finalOutput = {
   origin: '',
   destination: '',
@@ -35,100 +35,60 @@ var finalOutput = {
 }
 
 //Initialise arrays
-var tempRouteArr1 = []
-var tempRouteArr2 = []
-var tempIndex = []
-var lookUpArr = []
-var originLineIndex
-var originStationIndex
-var destinationLineIndex
-var destinationStationIndex
-
-//Initialise connection. This should be replaced with an array comparison that scans two arrays and finds matching elements
+var lineAndStationIndexPair = []
 var connection = 'Richmond'
 
 //Initialise functions
-var stopsLookUp = function(stationName) {  //take Origin and Destination as station name to look up.
-  for (stopsArr = 0; stopsArr < lines.length; stopsArr++) { // move through each object in line array
-    for (stopIndex = 0; stopIndex < lines[stopsArr].stops.length; stopIndex++) { // through stops array in the current object
-      if (stationName === lines[stopsArr].stops[stopIndex]) { //test if station name is present in array
-        console.log(stopsArr)  // testing returns object number
-        console.log(stopIndex) // testing returns array from object
+var stopsLookUp = function(stationName) {  
+  for (stopsArr = 0; stopsArr < lines.length; stopsArr++) { 
+    for (stopIndex = 0; stopIndex < lines[stopsArr].stops.length; stopIndex++) { 
+      if (stationName === lines[stopsArr].stops[stopIndex]) { 
         return [lines[stopsArr].stops, stopIndex]
       } 
     }
   }
 }
 
-
-var connectionLookUp = function(station, arr) {
-  for (y = 0; y < arr.length; y++) {
-    if (station === arr[y]) {
-      return y
-    }
-  }
+var connectionLookUp = function(lineArray) {
+  return lineArray.indexOf(connection)
 }
 
-var compareStations = function(firstStop, lastStop) {
-  if (firstStop > lastStop) {
-    return false
-  } else if (firstStop < lastStop) {
-    return true
-  }
-}
-
-var reverser = function(arr, elemIndex1, elemIndex2) {     // I dont like this one. non boolean parameters should be numbers not 
-  var isOriginFirst = compareStations(elemIndex1, elemIndex2)
-  if (isOriginFirst === true) { 
-    var finalRoute = arr.slice(elemIndex1, elemIndex2 + 1)
-  } else if (isOriginFirst === false) {
-    var finalRoute = arr.slice(elemIndex2, elemIndex1 + 1)
+var cutSectionOfLineArray= function(lineArray, firstStop, secondStop) {     
+  if (firstStop < secondStop) { 
+    var finalRoute = lineArray.slice(firstStop, secondStop + 1)
+  } else if (secondStop < firstStop) {
+    var finalRoute = lineArray.slice(secondStop, firstStop + 1)
     finalRoute.reverse()
   }
   return finalRoute
 }
 
-
-
-
-var findStation = function (message, ){
-
+var findStation = function (originOrDestination, lineAndStationIndex){
+  finalOutput.origin = prompt('Enter ' + originOrDestination +' station.')
+  lineAndStationIndexPair[lineAndStationIndex] = stopsLookUp(finalOutput.origin)
+  while (lineAndStationIndexPair[lineAndStationIndex] === undefined) {
+    finalOutput.origin = prompt('Please enter valid station.')
+    lineAndStationIndexPair[lineAndStationIndex] = stopsLookUp(finalOutput.origin)
+  }
 }
 
-// prompt for stations
-finalOutput.origin = prompt('Enter station to depart.')
-lookUpArr[0] = stopsLookUp(finalOutput.origin)
-while (lookUpArr[0] === undefined) {
-  finalOutput.origin = prompt('Please enter valid station.')
-  lookUpArr[0] = stopsLookUp(finalOutput.origin)
-}
-finalOutput.destination = prompt('Enter destination.')
-lookUpArr[1] = stopsLookUp(finalOutput.destination)
-while (lookUpArr[1] === undefined) {
-  finalOutput.origin = prompt('Please enter valid station.')
-  lookUpArr[1] = stopsLookUp(finalOutput.destination)
-} 
-// console.log(lookUpArr[0]) //testing
-// console.log(lookUpArr[1]) //testing
+findStation('origin', 0);
+findStation('destination', 1)
 
+var originLineArray = lineAndStationIndexPair[0][0]
+var originStationIndex = lineAndStationIndexPair[0][1]
+var destinationLineArray = lineAndStationIndexPair[1][0]
+var destinationStationIndex = lineAndStationIndexPair[1][1]
 
-// This block contains a nasty mess off arrays, that is hard to read, especially the last half. I'm not happy and will improve it in the future
-
-//find out if stops are on the same route
-if (lookUpArr[0][0] === lookUpArr[1][0]) { // if yes, move routeDestin[1] to new loction and discard array
-  console.log('the same route!') // testing
-  finalOutput.originIndex = lookUpArr[0][1] //kept this verbose for readability
-  finalOutput.destinIndex = lookUpArr[1][1]
-  tempRouteArr1 = lookUpArr[0][0]
-  finalOutput.stopsFinal = reverser(tempRouteArr1, finalOutput.originIndex, finalOutput.destinIndex)
-} else if (lookUpArr[0][0] !== lookUpArr[1][0]) { // if not,
-    // console.log('different routes!')   //testing
-    tempIndex[0] = connectionLookUp(connection, lookUpArr[0][0]) //find location of Richmond in first array
-    tempRouteArr1 = reverser( lookUpArr[0][0], lookUpArr[0][1], tempIndex[0]) // order array so Richmond is last and then cut
-    tempIndex[1] = connectionLookUp(connection, lookUpArr[1][0]) //find location of Richmond in second array
-    tempRouteArr2 = reverser( lookUpArr[1][0], tempIndex[1], lookUpArr[1][1]) // order array so Richmond is first and then cut
-    tempRouteArr2.shift() // remove richmond from second array
-    finalOutput.stopsFinal = tempRouteArr1.concat(tempRouteArr2) // concat arrays together to produce complete line
+if (originLineArray === destinationLineArray) { 
+  finalOutput.stopsFinal = cutSectionOfLineArray(originLineArray, originStationIndex, destinationStationIndex)
+} else if (originLineArray !== destinationLineArray) { 
+    var firstConnectionIndex = connectionLookUp(originLineArray) 
+    var firstSection = cutSectionOfLineArray( originLineArray, originStationIndex, firstConnectionIndex)
+    var secondConnectionIndex = connectionLookUp(destinationLineArray) 
+    var secondSection = cutSectionOfLineArray( destinationLineArray, secondConnectionIndex, destinationStationIndex) 
+    secondSection.shift() 
+    finalOutput.stopsFinal = firstSection.concat(secondSection) 
 }
 
 // Final output
