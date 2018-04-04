@@ -54,7 +54,7 @@ ninja_turtle = {
 
 #Add a key age to ninja_turtle. Set it to whatever numerical value you'd like.
 
-ninja_turtle["age"] = 15
+ninja_turtle[:age] = 15
 
 
 
@@ -65,11 +65,11 @@ ninja_turtle.delete(:radical)
 
 #Add a key pizza_toppings to ninja_turtle. Set it to an array of strings (e.g., ["cheese", "pepperoni", "peppers"]).
 
-ninja_turtle["pizza_toppings"] = ["cheese", "pepperoni", "peppers"]
+ninja_turtle[:pizza_toppings] = ["cheese", "pepperoni", "peppers"]
 
 #Access the first element of pizza_toppings.
 
-ninja_turtle["pizza_toppings"].first
+ninja_turtle[:pizza_toppings].first
 
 #Produce an array containing all of ninja_turtle's keys using a method. The Ruby documentation might help.
 
