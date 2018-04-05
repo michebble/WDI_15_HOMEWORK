@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: blue;
+  background-color: mistyrose;
   
 }
 
@@ -19,6 +19,13 @@ nav {
 }
 
 h1 {
-  font-family: 'Roboto', cursive;
-  border: 2px solid black;
+  font-family: 'Shrikhand', cursive;
+  border-bottom: 2px solid black;
+}
+
+main {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
