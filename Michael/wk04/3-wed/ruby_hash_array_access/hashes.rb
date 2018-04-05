@@ -19,7 +19,6 @@ puts h[1]
 
 puts h[:two]
 
-
 # How would you return the number 2?
 
 puts h["two"]
@@ -27,8 +26,6 @@ puts h["two"]
 # How would you add {3 => "Three"} to the hash?
 
 h[3] = "Three"
-
-
 
 # How would you add {:four => 4} to the hash?
 
@@ -106,6 +103,7 @@ puts anil_favourite_even_numbers = users["Anil"][:favorite_numbers].select { |nu
 common_favourite_numbers = users["Jonathan"][:favorite_numbers] & users["Erik"][:favorite_numbers] & users["Anil"][:favorite_numbers]
 
 #  How would you return an array containing all users' favorite numbers, sorted, and excluding duplicates?
+
 all_favourite_numbers = []
 users.each_value do |user_name|
   all_favourite_numbers.push(user_name[:favorite_numbers])
