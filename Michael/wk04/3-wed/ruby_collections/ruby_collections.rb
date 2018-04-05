@@ -11,7 +11,6 @@ puts planeteers[1]
 
 planeteers.push('Heart')
 
-
 #Remove "Captain Planet" from the array (without using pop or unshift).
 
 planeteers.slice!(2)
@@ -26,11 +25,9 @@ heroes =planeteers.concat(rangers)
 
 heroes.sort!
 
-
 #Randomize the contents of heroes using a method. The Ruby documentation might help.
 
 heroes.shuffle!
-
 
 #Bonus
 #Select a random element from heroes using a method. The Ruby documentation might help.
@@ -41,7 +38,6 @@ my_favourite_hero = heroes.sample
 
 the_b_team = heroes.select{ |first_letter| first_letter[0] == 'B' }
 
-
 #Hashes
 #Initialize a hash called ninja_turtle with the properties name, weapon and radical. They should have values of "Michelangelo", "Nunchuks" and true respectively.
 
@@ -51,13 +47,9 @@ ninja_turtle = {
   radical: true
 }
 
-
 #Add a key age to ninja_turtle. Set it to whatever numerical value you'd like.
 
 ninja_turtle[:age] = 15
-
-
-
 
 #Remove the radical key-value pair from ninja_turtle.
 
@@ -73,8 +65,7 @@ ninja_turtle[:pizza_toppings].first
 
 #Produce an array containing all of ninja_turtle's keys using a method. The Ruby documentation might help.
 
-turtle_array = ninja_turtle.to_a
-
+turtle_array = ninja_turtle.keys.to_a
 
 #Bonus
 #Print out each key-value pair in the following format - "KEY's is equal to VALUE" -- using a method. The Ruby documentation might help.

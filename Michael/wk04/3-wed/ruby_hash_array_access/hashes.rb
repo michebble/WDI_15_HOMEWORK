@@ -79,7 +79,7 @@ users = {
 }
 # How would you access Jonathan's Twitter handle (i.e. the string "tronathan")?
 
- users["Jonathan"][:twitter]
+users["Jonathan"][:twitter]
 
 # How would you add the number 7 to Erik's favorite numbers?
 
@@ -108,6 +108,6 @@ common_favourite_numbers = users["Jonathan"][:favorite_numbers] & users["Erik"][
 #  How would you return an array containing all users' favorite numbers, sorted, and excluding duplicates?
 all_favourite_numbers = []
 users.each_value do |user_name|
-all_favourite_numbers.push(user_name[:favorite_numbers])
+  all_favourite_numbers.push(user_name[:favorite_numbers])
 end
 puts all_favourite_numbers.flatten.uniq.sort
