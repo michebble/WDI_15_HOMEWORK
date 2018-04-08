@@ -25,9 +25,17 @@ get '/index' do
 end
 
 get '/movie' do
-  
+
+  # if params ="" 
+  #   redirect to('/index')
+  # end
+
   url = "http://omdbapi.com/?apikey=2f6435d9&t=#{params[:name]}"
   result = HTTParty.get(url)
+
+  if result["Response"] == "False"
+    redirect to('/index')
+  else
 
   @movie_poster = result.parsed_response["Poster"]
   @movie_title = result.parsed_response["Title"]
@@ -40,6 +48,7 @@ get '/movie' do
   @page_title = "Movie Shock - #{@movie_title}"
 
   erb :movie
+  end
 end
 
 
