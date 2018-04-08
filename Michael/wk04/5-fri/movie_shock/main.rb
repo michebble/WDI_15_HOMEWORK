@@ -24,7 +24,7 @@ end
 
 get '/movie' do
 
-  url = "http://omdbapi.com/?apikey=2f6435d9&plot=full&t=#{params[:name]}"
+  url = "http://omdbapi.com/?apikey=2f6435d9&t=#{params[:name]}"
   result = HTTParty.get(url)
 
   @movie_poster = result.parsed_response["Poster"]
