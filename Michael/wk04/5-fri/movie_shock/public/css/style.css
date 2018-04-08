@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: azure;
+  font-family: 'Fjalla One', sans-serif;
+
+}
+
+header, footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+ 
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+}
+
+a {
+  text-decoration: none;
+  padding: 5px;
+  margin: 5px;
+  color: black;
+  
+}
+
+main {
+  padding: 20px;
+  width: 80%;
+  margin: 0 auto 120px auto;
+  font-family: 'Average', serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid black;
+  
+}
+
+img {
+  width: 100%;
+}
+
+footer {
+  height: 100px;
+  background-color: peru;
+  border-top: 3px solid saddlebrown;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
