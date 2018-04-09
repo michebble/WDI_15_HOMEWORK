@@ -3,15 +3,7 @@ require 'sinatra/reloader'
 require 'pry'
 require 'httparty'
 
-# print "Enter movie title"
-# title = gets.chomp
 
-# url = "http://omdbapi.com/?apikey=2f6435d9&t=#{title}"
-
-# result = HTTParty.get(url)
-
-# result.parsed_response["Title"]
-#  result.parsed_response["Plot"]
 
 @error = {"Response"=>"False", "Error"=>"Movie not found!"}
 
@@ -26,8 +18,8 @@ end
 
 get '/search' do
   search_request = params[:name]
-  while search_request[-1] == " "
-    search_request.chop!
+  if search_request[-1] == " "
+    search_request.strip!
   end
 
   url = "http://omdbapi.com/?apikey=2f6435d9&s=#{search_request}"
