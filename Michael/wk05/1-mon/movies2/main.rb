@@ -5,7 +5,7 @@ require 'httparty'
 
 
 
-@error = {"Response"=>"False", "Error"=>"Movie not found!"}
+$page_counter
 
 get "/" do
   redirect to('/index')
@@ -13,22 +13,23 @@ end
 
 get '/index' do
   @page_title = "Movie Shock"
+  $page_counter = 1
   erb :index 
 end
 
 get '/search' do
-  search_request = params[:name]
-  if search_request[-1] == " "
-    search_request.strip!
+  @search_request = params[:name]
+  if @search_request[-1] == " "
+    @search_request.strip!
   end
 
-  url = "http://omdbapi.com/?apikey=2f6435d9&s=#{search_request}"
+  url = "http://omdbapi.com/?apikey=2f6435d9&page=#{$page_counter}&s=#{@search_request}"
   result = HTTParty.get(url)
   if result["Response"] == "False" 
     redirect to('/index')
   else
-
-  @search_result = result.parsed_response["Search"]
+    @search_result = result.parsed_response["Search"]
+    @search_total = result.parsed_response["totalResults"]
   end
   erb :search
 end

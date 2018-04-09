@@ -20,6 +20,12 @@ h1 {
   margin: 0;
 }
 
+h3 {
+  font-size: 2em;
+    font-family: 'Fjalla One', sans-serif;
+    color: #edf5e1;
+}
+
 main {
   font-family: 'Average', serif;
   display: flex;
@@ -69,6 +75,11 @@ button:hover {
   cursor: not-allowed;
 }
 
+ol {
+  font-size: 1.25em;
+  line-height: 1.5;
+}
+
 
 .img-container {
   width: 50%;
@@ -88,7 +99,7 @@ button:hover {
   font-weight: 700;
 }
 
-.about {
+.about-text {
   width:70%;
   display: flex;
   align-items: center;
