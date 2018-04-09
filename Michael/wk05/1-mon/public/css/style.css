@@ -1,0 +1,174 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #5cdb95;
+  font-family: 'Fjalla One', sans-serif;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  margin: 0;
+}
+
+main {
+  font-family: 'Average', serif;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 5em;
+}
+
+form {
+  width: 90%;
+  padding: 4em 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+input {
+  text-align: center;
+  width: 100%;
+  height: 2em;
+  padding: 1em;
+  margin: 2em;
+  font-size: 2em;
+  border: 1px solid #8EE4AF;
+  box-shadow: 3px 3px 5px 0px rgba(55,150,131,0.75);
+}
+
+button {
+  cursor: pointer;
+  font-size: 2em;
+  background-color: #379683;
+  color: #edf5e1;
+  font-size: 1.25em;
+  border: none;
+  border-radius: 20px;
+  padding: 1em 2em;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #05386b ;
+  color: #edf5e1;
+}
+
+.disabled {
+  background-color: #8ee4af;
+  cursor: not-allowed;
+}
+
+
+.img-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2em;
+}
+
+.details-container {
+  width: 90%;
+  margin: 2em 0;
+}
+
+.movie-info {
+  /* font-size: 1.25em; */
+  font-weight: 700;
+}
+
+.about {
+  width:70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 1.25em;
+}
+
+img {
+  width: 100%;
+  box-shadow: 3px 3px 5px 0px rgba(55,150,131,0.75);
+}
+
+.founder {
+  width: 80%;
+}
+
+
+footer {
+  background-color: #5cdb95;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  
+}
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 2em;
+}
+
+a {
+  text-decoration: none;
+  color: #05386b;
+}
+
+h1 a {
+  font-size: 2em;
+  text-shadow: 0 0 3px #8EE4AF;
+}
+
+nav a {
+  padding: 0 2em;  
+}
+
+@media (min-width: 30em) {
+
+  main {
+    width: 80%;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+
+
+  .img-container {
+    width: 30%;
+    margin-right: 2em;
+  }
+
+
+  .details-container {
+    width: 30%;
+    font-size: 1.5em;
+    
+  }
+
+  .movie-info {
+    font-size: 1em;
+    font-weight: 700;
+  }
+
+  h1 a {
+    font-size: 3em;
+  }
+
+  nav a {
+    font-size: 2em;
+  
+  }
+}

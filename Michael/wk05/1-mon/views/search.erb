@@ -1,0 +1,10 @@
+<div>
+  results1
+  <ol>
+    <% @search_result.each do |result|%>
+    <li><a href=<%="/movie?name=#{result["Title"]}"%>><%= "#{result["Title"]} (#{result["Year"]})"%></a></li>
+    <% end%>
+  </ol>
+
+
+</div>

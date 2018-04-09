@@ -1,0 +1,15 @@
+
+  <div class="img-container" >
+    <img src=<%= @movie_poster%> alt="<%= @movie_title%>">
+  </div>
+
+  <div class="details-container">
+    <div class="movie-info"><%= "#{@movie_title} (#{@movie_year})" %></div>
+    <div class="movie-info"><%= @movie_genre%></div>
+    <div class="movie-info"><%= "Rated: #{@movie_rated} - #{@movie_runtime}"%></div>
+    <article><%= @movie_plot%></article>
+  </div>
+
+
+
+  
