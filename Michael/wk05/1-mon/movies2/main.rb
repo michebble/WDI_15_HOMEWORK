@@ -25,16 +25,26 @@ get '/index' do
 end
 
 get '/search' do
-  url = "http://omdbapi.com/?apikey=2f6435d9&s=#{params[:name]}"
+  search_request = params[:name]
+  while search_request[-1] == " "
+    search_request.chop!
+  end
+
+  url = "http://omdbapi.com/?apikey=2f6435d9&s=#{search_request}"
   result = HTTParty.get(url)
+  if result["Response"] == "False" 
+    redirect to('/index')
+  else
+
   @search_result = result.parsed_response["Search"]
+  end
   erb :search
 end
 
 
 get '/movie' do
 
-  url = "http://omdbapi.com/?apikey=2f6435d9&t=#{params[:name]}"
+  url = "http://omdbapi.com/?apikey=2f6435d9&i=#{params[:id]}"
   result = HTTParty.get(url)
 
   if result["Response"] == "False"

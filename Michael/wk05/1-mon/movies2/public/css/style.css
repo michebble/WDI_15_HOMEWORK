@@ -23,7 +23,7 @@ h1 {
 main {
   font-family: 'Average', serif;
   display: flex;
-  align-items: center;
+  justify-content: center;
   flex-direction: column;
   padding-bottom: 5em;
 }

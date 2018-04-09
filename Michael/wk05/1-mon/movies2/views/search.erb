@@ -1,0 +1,11 @@
+<div>
+  <h3>results</h3>
+  <ol>
+    <% @search_result.each do |result|%>
+    
+    <li><a href=<%= "/movie?id=#{result["imdbID"]}"%> ><%= "#{result["Title"]} (#{result["Year"]})"%></a></li>
+    <% end%>
+  </ol>
+
+
+</div>
