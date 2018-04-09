@@ -30,7 +30,17 @@ get '/search' do
   else
     @search_result = result.parsed_response["Search"]
     @search_total = result.parsed_response["totalResults"]
+    date = Time.new.to_s
+
+    File.open('passwords.txt', 'a+') do |file|
+      line = "@#{date}, searched for #{@search_request}: Found #{@search_total} macthes"
+      file.puts line
+    end
+  
   end
+
+  
+
   erb :search
 end
 
