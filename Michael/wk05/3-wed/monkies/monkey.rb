@@ -24,7 +24,7 @@ class Monkey
       food_string = make_string(@foods_eaten)
       food_sentence = "I had #{food_string} for brunch."
     end
-    puts "Hi my name is #{@name}. I am a #{@species}. #{food_sentence}"
+    puts "Hi my name is #{@name}. I am a #{@species} and #{food_sentence}"
   end
 
   private
