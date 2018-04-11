@@ -32,8 +32,8 @@ get '/search' do
     @search_total = result.parsed_response["totalResults"]
     date = Time.new.to_s
 
-    File.open('passwords.txt', 'a+') do |file|
-      line = "@#{date}, searched for #{@search_request}: Found #{@search_total} macthes"
+    File.open('search_log.txt', 'a+') do |file|
+      line = "@#{date}, searched for #{@search_request}: Found #{@search_total} matches"
       file.puts line
     end
   

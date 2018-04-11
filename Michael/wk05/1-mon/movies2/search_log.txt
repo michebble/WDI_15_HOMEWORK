@@ -5,3 +5,4 @@
 @2018-04-10 11:17:35 +1000, searched for crud: Found 1 macthes
 @2018-04-10 11:17:53 +1000, searched for jaws: Found 83 macthes
 @2018-04-10 11:19:08 +1000, searched for wired: Found 84 macthes
+@2018-04-10 17:47:26 +1000, searched for batman: Found 338 macthes
