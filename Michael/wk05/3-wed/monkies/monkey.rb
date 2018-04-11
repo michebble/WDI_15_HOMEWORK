@@ -8,15 +8,27 @@ class Monkey
   end
 
   def eat(food)
-    @foods_eaten << food
+    if food.end_with?("s")
+      @foods_eaten << food
+    elsif food.downcase.start_with?("a","e","i","o","u")
+      @foods_eaten << 'an ' + food
+    elsif
+      @foods_eaten << 'a ' + food
+    end
   end
 
   def introduce
-    food_string = make_string(@foods_eaten)
-    puts "Hi my name is #{@name}. I am a #{@species}. I had a #{food_string} for brunch."
+    if @foods_eaten.empty?
+      food_sentence = 'I am hungry!'
+    else
+      food_string = make_string(@foods_eaten)
+      food_sentence = "I had #{food_string} for brunch."
+    end
+    puts "Hi my name is #{@name}. I am a #{@species}. #{food_sentence}"
   end
 
   private
+
   def make_string(array)
     if array.length > 1
       return add_and(array)
@@ -26,13 +38,9 @@ class Monkey
   end
 
   def add_and(array)
-    output_string = array.join(", a ").reverse!
+    output_string = array.join(", ").reverse!
     output_string[output_string.index(" ,")] = " dna "
     return output_string.reverse!
   end
 
 end
-
-binding.pry
-
-puts 'ukiki bye bye'
