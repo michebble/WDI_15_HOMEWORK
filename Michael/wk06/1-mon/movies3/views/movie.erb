@@ -1,0 +1,14 @@
+
+  <div class="img-container" >
+    <img src="<%= @movie['Poster'] %>" alt="<%= @movie['Title'] %>">
+  </div>
+
+  <div class="details-container">
+    <div class="movie-info"><%= "#{ @movie['Title'] } ( #{@movie['Year'] })" %></div>
+    <div class="movie-info"><%= "Rated: #{ @movie['Rated'] } - #{ @movie['Runtime'] }"%></div>
+    <article><%= @movie['Plot'] %></article>
+  </div>
+
+
+
+  
