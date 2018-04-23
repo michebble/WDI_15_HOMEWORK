@@ -50,6 +50,9 @@ end
 
 
 get '/movie' do
+  
+  
+
 
   url = "http://omdbapi.com/?apikey=2f6435d9&i=#{params[:id]}"
   result = HTTParty.get(url)
@@ -66,7 +69,7 @@ get '/movie' do
     # @movie_runtime = result.parsed_response["Runtime"]
     # @movie_plot = result.parsed_response["Plot"]
     
-    @page_title = "Movie Shock - #{@movie_title}"
+    @page_title = "Movie Shock - #{@movie['Title']}"
 
     erb :movie
   end
