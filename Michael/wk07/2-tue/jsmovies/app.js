@@ -1,18 +1,19 @@
-var $searchBtn = $('.search-btn');
-var $main = $(".main");
 
+var createList = function(object) {
+  object.Search.forEach(function(element){
+    $('main').append("<a href=https://www.imdb.com/title/" + element.imdbID + "><h2>" + element.Title + "</h2></a>")
+  })
+}
+
+var $searchBtn = $('.search-btn');
 
 $searchBtn.on('click', function(event){
-  var $searchBar = $(".search-bar");
   event.preventDefault();
+  var $searchBar = $(".search-bar");
   var $searchQuery = $searchBar.val();
   $.ajax({
     url: 'http://omdbapi.com/?s=' + $searchQuery + '&apikey=2f6435d9'
-  }).done(function(res){
-    res.Search.forEach(function(element){
-      $('main').append("<h2>" + element.Title + "</h2>")
-    })
-  })
+  }).done(createList)
 });
     
 
