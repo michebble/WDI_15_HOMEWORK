@@ -1,4 +1,7 @@
 
+var $resultArea = $('main');
+var $searchBtn = $('.search-btn');
+
 var createList = function(res) {
   res.Search.forEach(function(movie){
     $h2 = $('<h2>');
@@ -10,14 +13,14 @@ var createList = function(res) {
 
     $h2.append($a);
 
-    $('main').append($h2);
+    $resultArea.append($h2);
   })
 }
 
-var $searchBtn = $('.search-btn');
 
 $searchBtn.on('click', function(event){
   event.preventDefault();
+  $resultArea.empty();
   var $searchBar = $(".search-bar"); 
   var options = {
     url: 'http://omdbapi.com/?s=' + $searchBar.val() + '&apikey=2f6435d9'
