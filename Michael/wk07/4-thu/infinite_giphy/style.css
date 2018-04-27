@@ -1,6 +1,25 @@
-.gif-box {
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+main {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
+}
+
+.gif-box {
+  padding: 20px;
 }
