@@ -1,6 +1,7 @@
 
 var $searchBtn = $('.search-btn');
-var $searchBar = $(".search-bar");var $resultArea = $('main');
+var $searchBar = $(".search-bar");
+var $resultArea = $('main');
 var offset = 0;
 var currentSearch = 'trending?'
 var options = {
