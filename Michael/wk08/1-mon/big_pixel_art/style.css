@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.brush-box {
+  height: 100px;
+  width: 100px;
+  border: 2px solid black;
+}
