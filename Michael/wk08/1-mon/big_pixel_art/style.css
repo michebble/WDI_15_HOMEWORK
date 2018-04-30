@@ -13,3 +13,16 @@ header {
   width: 100px;
   border: 2px solid black;
 }
+
+main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 200px;
+}
+
+.square {
+  height: 20px;
+  width: 20px;
+  border: 1px solid black;
+}
