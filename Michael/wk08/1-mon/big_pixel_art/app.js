@@ -3,7 +3,8 @@ $colorInput = $('.color-input');
 $colorBtn = $('.color-btn');
 
 var changeColor = function(event) {
-  event.target.style.backgroundColor = 'green';
+  var currentColor = $brushBox[0].style.backgroundColor
+  event.target.style.backgroundColor = currentColor;
 }
 
 var createPixels = function() {
