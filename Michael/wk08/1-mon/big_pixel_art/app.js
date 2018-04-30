@@ -2,12 +2,15 @@ $brushBox = $('.brush-box');
 $colorInput = $('.color-input');
 $colorBtn = $('.color-btn');
 
-
+var changeColor = function(event) {
+  event.target.style.backgroundColor = 'green';
+}
 
 var createPixels = function() {
   for(var i = 0; i < 100; i++) {
     $div = $('<div>')
-      .addClass('square');
+      .addClass('square')
+      .on('click', changeColor);
 
     $('main').append($div);
   }
