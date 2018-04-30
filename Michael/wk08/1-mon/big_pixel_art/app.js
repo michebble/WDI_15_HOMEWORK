@@ -10,7 +10,7 @@ var changeColor = function(event) {
 }
 
 var createPixels = function() {
-  for(var i = 0; i < 100; i++) {
+  for(var i = 0; i < 270; i++) {
     $div = $('<div>')
       .addClass('square')
       .mouseover(changeColor);
@@ -35,10 +35,8 @@ $colorInput.keypress(function(event) {
 })
 
 $searchBtn.click(function(event){
-  
   event.preventDefault();
   var movieTitle = $searchInput.val();
-  
   var options = {
     url: 'http://omdbapi.com/?t=' + movieTitle + '&apikey=2f6435d9'
   };

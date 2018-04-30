@@ -19,7 +19,8 @@ main {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 200px;
+  width: 300px;
+  height: 350px;
 }
 
 .square {
