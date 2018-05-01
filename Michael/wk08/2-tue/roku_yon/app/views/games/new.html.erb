@@ -1,8 +1,15 @@
-<form action="/games" method="post">
+<form class='form' action="/games" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <label for="">description</label>
-  <textarea name="description" id="" cols="30" rows="10"></textarea>
-  <label for="">Cover url</label>
-  <input name="image_url" type="text">
-  <button>create sale</button>
+  <div>
+    <label for="">Game Title</label>
+    <input name="title" type="text">
+  
+    <label for="">Cover url</label>
+    <input name="image_url" type="text">
+  </div>
+  <div>
+    <label for="">description</label>
+    <textarea name="description" id="" cols="30" rows="10"></textarea>
+  </div>
+  <button>Save Details</button>
 </form>

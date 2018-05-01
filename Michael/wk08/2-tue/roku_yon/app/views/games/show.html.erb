@@ -1,6 +1,6 @@
 <div>
   <div> <%= @game.title %> </div>
-  <img src="<%= @gmae.image_url %>" alt="<%= @game.title %>">
+  <img src="<%= @game.image_url %>" alt="<%= @game.title %>">
   <div><%= @game.description %></div>
   
   <form action="/games/<%= @game.id %>" method="post">
