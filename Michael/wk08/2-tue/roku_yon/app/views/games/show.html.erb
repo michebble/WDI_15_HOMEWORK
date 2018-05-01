@@ -1,0 +1,12 @@
+<div>
+  <div> <%= @game.title %> </div>
+  <img src="<%= @gmae.image_url %>" alt="<%= @game.title %>">
+  <div><%= @game.description %></div>
+  
+  <form action="/games/<%= @game.id %>" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="delete">
+    <button>delete item</button>
+  </form>
+  <a href="/games/<%= @game.id %>/edit">edit</a>
+</div>
