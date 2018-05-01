@@ -11,19 +11,20 @@
 
   <body>
     <header>
-      <h1>ロクヨン</h1><h2>六四</h2><h3>RokuYon</h3>
+      <a href="/"><h1>ロクヨン六四RokuYon</h1></a>
       
       <% if logged_in? %>
         logged in as <%= current_user.email %>
           <form action="/session" method="post">
             <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
             <input type="hidden" name="_method" value="delete">
-            <button>logout</button>
+            <button>Logout</button>
           </form>
+          <a href="/games/new">Create New</a>
       <% else %>
-        <a href="/login">login</a>
+        <a href="/login">Login</a>
       <% end %>
-      
+
     </header>
     <%= yield %>
   </body>
