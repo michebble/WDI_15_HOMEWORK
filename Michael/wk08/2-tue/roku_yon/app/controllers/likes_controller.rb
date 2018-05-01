@@ -1,13 +1,14 @@
 class LikesController < ApplicationController
 
   def create
-    redirect_to '/login' unless logged_in?
-    
-    like = Like.new
-    like.user_id = current_user.id
-    like.dish_id = params[:game_id]
-    if like.save
-      redirect to("/games/#{ params[:game_id] }")
+    if User.find_by(id: session[:user_id])
+      
+      like = Like.new
+      like.user_id = session[:user_id]
+      like.game_id = params[:game_id]
+      if like.save
+        redirect_to "/games/#{ params[:game_id] }"
+      end
     end
   end
 

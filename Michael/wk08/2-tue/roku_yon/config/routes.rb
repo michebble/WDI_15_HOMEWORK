@@ -7,8 +7,8 @@ Rails.application.routes.draw do
 
   get '/', to: 'games#index'
 
-  # post '/likes', to 'likes#create'
-  # delete '/likes', to 'likes#destroy'
+  post '/likes', to: 'likes#create'
+  delete '/likes', to: 'likes#destroy'
   
   
 
