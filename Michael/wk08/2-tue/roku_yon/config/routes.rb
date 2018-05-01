@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  resources :likes
+  resources :users
   resources :games
   # resources :likes
 
-  post '/likes', to 'likes#create'
-  delete '/likes', to 'likes#destroy'
+  # post '/likes', to 'likes#create'
+  # delete '/likes', to 'likes#destroy'
   
   get '/login', to: 'session#new'
   post '/session', to: 'session#create'
