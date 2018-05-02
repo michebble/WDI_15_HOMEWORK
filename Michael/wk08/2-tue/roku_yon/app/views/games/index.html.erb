@@ -1,13 +1,14 @@
-
-<% if !@games.nil? %>
-  <% @games.each do |game|%>
-    <div class="index-game">
-      <div>
-        <a href= "/games/<%= game.id %>" ><img src="<%= game.image_url %>"></a>
+<div class="foo">
+  <% if !@games.nil? %>
+    <% @games.each do |game|%>
+      <div class="index-game">
+        <div>
+          <a href= "/games/<%= game.id %>" ><img src="<%= game.image_url %>"></a>
+        </div>
+        <div>
+          <%= game.title %> 
+        </div>
       </div>
-      <div>
-        <%= game.title %> 
-      </div>
-    </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>

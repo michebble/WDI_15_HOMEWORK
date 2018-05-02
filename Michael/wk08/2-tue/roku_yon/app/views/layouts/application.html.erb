@@ -11,7 +11,7 @@
 
   <body>
     <header>
-      <a href="/"><h1>ロクヨン六四RokuYon</h1></a>
+      <a href="/"><h1>ロクヨン - RokuYon - 六四</h1></a>
       
       <% if logged_in? %>
         logged in as <%= current_user.email %>
@@ -20,12 +20,15 @@
             <input type="hidden" name="_method" value="delete">
             <button>Logout</button>
           </form>
-          <a href="/games/new">Create New</a>
+          
       <% else %>
         <a href="/login">Login</a>
       <% end %>
-
     </header>
+    <nav>
+      <a href="/">Games List</a>
+      <a href="/games/new">Create New</a>
+    </nav>
     <%= yield %>
   </body>
 </html>

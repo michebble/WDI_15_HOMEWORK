@@ -17,12 +17,22 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: aquamarine;
+}
+
 header {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  justify-items: center;
+  justify-content: space-between;
+  
 }
+
+a {
+  text-decoration: none;
+  color:black; 
+}
+
 
 .form {
   display: flex;
@@ -36,6 +46,7 @@ header {
   align-items: center;
   border: 2px solid black;
 }
+
 img {
   width:100%;
 }
@@ -49,7 +60,14 @@ img {
 
 .index-game {
   display: flex;
-  width: 25%;
+  width: 22%;
   flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.foo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   flex-wrap: wrap;
 }

@@ -27,8 +27,8 @@ $likeBtn.on('click', function(event){
   event.preventDefault();
 
   var options = {
-    url: '/api/likes',
-    data: { game_id: <%= @game.id %> },
+    url: '/likes',
+    data: { game_id: <%= @game.id %>, },
     method: 'post'
   }
 
