@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   get '/secret/guess', to: 'secret#guess'
   get '/secret/correct', to: 'secret#correct'
 
+  get '/rps', to: 'rps#play'
+  get '/rps/throw', to: 'rps#result'
+
 end
