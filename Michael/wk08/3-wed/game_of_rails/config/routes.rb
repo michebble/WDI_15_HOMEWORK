@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   get '/magic/answer', to: 'magic#answer'
 
   get '/secret/guess', to: 'secret#guess'
+  get '/secret/correct', to: 'secret#correct'
 
 end
