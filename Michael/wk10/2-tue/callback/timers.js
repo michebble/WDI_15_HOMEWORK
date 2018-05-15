@@ -8,3 +8,9 @@ pauseBtn.addEventListener('click',  );
 
 var seconds = 0;
 var timerId = setInterval(function(){}, 1000);
+
+function updateTimer() {
+  var timer = document.querySelector('#timer');
+  seconds += 1;
+  timer.textContent = seconds;
+}
