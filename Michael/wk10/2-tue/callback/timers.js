@@ -13,8 +13,9 @@ function updateTimer() {
   timer.textContent = seconds;
 }
 
-resetBtn.addEventListener('click', function(){} );
+resetBtn.addEventListener('click', function(){});
 startBtn.addEventListener('click', function(){
-  timerId = setInterval(function(){updateTimer()}, 1000)
-} );
-pauseBtn.addEventListener('click', function(){}  );
+  timerId = setInterval(function(){updateTimer()}, 1000);
+});
+pauseBtn.addEventListener('click', function(){clearInterval(timerId);
+});
