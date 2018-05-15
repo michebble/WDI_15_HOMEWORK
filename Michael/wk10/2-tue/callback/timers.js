@@ -6,10 +6,11 @@ var timer = document.querySelector('#timer');
 var seconds = 0;
 var timerId;
 var readyMessage = 'Stop Watch';
+var countingMessage = 'Time elapsed:';
 
 function updateTimer() {
   seconds += 1;
-  timer.textContent = seconds;
+  timer.textContent = `${countingMessage} ${seconds}`;
 }
 
 resetBtn.addEventListener('click', function(){
