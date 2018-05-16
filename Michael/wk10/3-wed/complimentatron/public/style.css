@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Comfortaa', cursive;
+}
+
+
+div{
+  width: 90%;
+  text-align: center;
+}
+
+.japanese {
+  font-size: 6rem;
+  font-family: "Mplus 1p";
+  font-weight: bold;
+}
+
+.translation {
+  font-size: 3rem;
+  
+}

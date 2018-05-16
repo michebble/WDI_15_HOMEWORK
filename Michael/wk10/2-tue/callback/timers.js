@@ -8,21 +8,23 @@ var timerId;
 var readyMessage = 'Stop Watch';
 var countingMessage = 'Time elapsed:';
 
-function updateTimer() {
+var updateTimer = () => {
   seconds += 1;
   timer.textContent = `${countingMessage} ${seconds}`;
 }
 
-resetBtn.addEventListener('click', function(){
+
+
+startBtn.addEventListener('click', () => {
+  timerId = setInterval( () => {
+    updateTimer()
+  }, 1000);
+});
+
+resetBtn.addEventListener('click', () => {
   clearInterval(timerId);
   seconds = 0;
   timer.textContent = readyMessage;
 });
 
-startBtn.addEventListener('click', function(){
-  timerId = setInterval(function(){updateTimer()}, 1000);
-});
-
-pauseBtn.addEventListener('click', function(){
-  clearInterval(timerId);
-});
+pauseBtn.addEventListener('click', () => clearInterval(timerId));
