@@ -10,7 +10,11 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body style="background-color:<%= color %>;">
-  <h1>Learn some Japanese sayings</h1>
+  <% if (name) { %>
+    <h1>Hi <%= name %>, learn some Japanese sayings</h1>
+  <% } else { %>
+    <h1>Learn some Japanese sayings</h1>
+  <% }; %>
   <div class="japanese"><%= saying[0] %></div> 
   <div class="translation"><%= saying[1] %></div> 
   
