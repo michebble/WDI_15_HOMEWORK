@@ -14,14 +14,14 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
 const sayings = [
-  ["一期一会", "“Once In A Lifetime Opportunity”"],
-  ["一石二鳥", "“Killing two birds with one stone”"],
-  ["初志貫徹", "“Achieving one’s original intention”"],
-  ["以心伝心", "“Without any need for words”"],
-  ["一所懸命", "“With utmost effort”"],
-  ["温故知新", "“Learning from the past”"],
-  ["花鳥風月", "“The beauties of nature”"],
-  ["臥薪嘗胆", "“Going through thick and thin to attain one’s objective”"],
+  ["一期一会", "“Once In A Lifetime Opportunity”", "Ichigoichie"],
+  ["一石二鳥", "“Killing two birds with one stone”", "Issekinicho"],
+  ["初志貫徹", "“Achieving one’s original intention”", "Shoshikantetsu"],
+  ["以心伝心", "“Without any need for words”", "Ishindenshin"],
+  ["一所懸命", "“With utmost effort”", "Isshokenmei"],
+  ["温故知新", "“Learning from the past”", "Onkochishin"],
+  ["花鳥風月", "“The beauties of nature”", "Kachoufuugetsu"],
+  ["臥薪嘗胆", "“Going through thick and thin to attain one’s objective”", "Ganshinshoutan"],
   ["質実剛健", "“Unaffected and sincere”"],
   ["十人十色", "“To each his own”"],
   ["晴耕雨読", "“Living in quiet retirement dividing time between work and intellectual pursuits”"],
