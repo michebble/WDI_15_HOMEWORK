@@ -8,8 +8,9 @@ const account = {
   username: "marijn",
   password: "xyzzy"
 }
+account2 = Object.freeze(account)
 
-account.password = "s3cret"
+account2.password = "s3cret"
 
 console.log(account.password)
 
