@@ -12,4 +12,7 @@ describe('passwordMeter', () => {
   it('should return 1 when password has a lowercase char and is less than eight', () => {
     expect(getStrength('abc')).to.be.equal(1)
   })
+  it('should return 1 when password has a uppercase char and is less than eight', () => {
+    expect(getStrength('ABC')).to.be.equal(1)
+  })
 })
