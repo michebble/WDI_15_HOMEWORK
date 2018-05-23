@@ -13,6 +13,9 @@ export default function getStrength(password) {
   if (uppercase.test(password)) {
     output += 1
   }
+  if (number.test(password)) {
+    output += 1
+  }
   return output
   
 }
