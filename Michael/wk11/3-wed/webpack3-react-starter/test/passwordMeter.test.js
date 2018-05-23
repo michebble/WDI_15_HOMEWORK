@@ -24,4 +24,7 @@ describe('passwordMeter', () => {
   it('should return 1 when password has a non alpha numeric char and is less than eight', () => {
     expect(getStrength('$ %')).to.be.equal(1)
   })
+  it('should return 5 when passorword has all char types and is longer than 8 chars', () => {
+    expect(getStrength('$ %')).to.be.equal(1)
+  })
 })
