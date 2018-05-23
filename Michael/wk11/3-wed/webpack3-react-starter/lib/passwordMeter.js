@@ -4,21 +4,11 @@ export default function getStrength(password) {
   const symbols = /\W/g
   const number = /\d/g
   let output = 0
-  if (password.length >= 8) {
-    output += 1
-  } 
-  if (lowercase.test(password)) {
-    output += 1
-  }
-  if (uppercase.test(password)) {
-    output += 1
-  }
-  if (number.test(password)) {
-    output += 1
-  }
-  if (symbols.test(password)) {
-    output += 1
-  }
+  output += length_test(password) ? 1 : 0
+  output += lowercase.test(password) ? 1 : 0
+  output += uppercase.test(password) ? 1 : 0
+  output += number.test(password) ? 1 : 0
+  output += symbols.test(password) ? 1 : 0
   return output
 }
 
@@ -26,6 +16,8 @@ export default function getStrength(password) {
 
 
   
-
+function length_test(password) {
+  return (password.length >= 8)
+}
 
  
