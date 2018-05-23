@@ -11,10 +11,6 @@ export default function getStrength(password) {
   output += symbols.test(password) ? 1 : 0
   return output
 }
-
-
-
-
   
 function length_test(password) {
   return (password.length >= 8)

@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import getStrength from '../lib/checkPass'
+import estimateStrength from '../lib/checkPass'
 import { get } from 'https';
 
 describe('password', () => {
