@@ -16,8 +16,10 @@ export default function getStrength(password) {
   if (number.test(password)) {
     output += 1
   }
+  if (symbols.test(password)) {
+    output += 1
+  }
   return output
-  
 }
 
 
