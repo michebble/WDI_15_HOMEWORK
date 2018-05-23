@@ -1,9 +1,10 @@
 export default function checkPass(password) {
-  const lowercase = /[a-z]/g
+  const lowerCase = /[a-z]/g
+  const specialChar = /\W/g
   let result = new Object()
-  result.hasLowerCase = lowercase.test(password) ? true : false
+  lowerCase.test(password) ? result.hasLowerCase = true : null
+  specialChar.test(password) ? result.hasSpecialChar = true : null
   result.score = totalScore(result)
-  
   return result
 }
 
