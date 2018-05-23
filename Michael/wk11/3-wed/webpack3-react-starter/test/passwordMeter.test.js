@@ -25,6 +25,6 @@ describe('passwordMeter', () => {
     expect(getStrength('$ %')).to.be.equal(1)
   })
   it('should return 5 when passorword has all char types and is longer than 8 chars', () => {
-    expect(getStrength('$ %')).to.be.equal(1)
+    expect(getStrength('fT4%hhhh')).to.be.equal(1)
   })
 })
